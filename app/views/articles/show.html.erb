@@ -1,0 +1,28 @@
+<div class="container">
+
+<p style="font-size:30px; font-family:Avenir Next; text-align:left;">
+  <%= @article.title %>
+</p>
+<%= image_tag(@article.image)%> 
+<p style="font-size:20px; font-family:Avenir Next; text-align:left;">
+  <%= @article.text %>
+</p>
+
+
+ 
+ <%= form_tag article_sms_path(@article), method: :post do %>
+ <%= text_field_tag :number, nil, placeholder: 'Enter phone number' %> 
+ <%= submit_tag %>
+ <% end %>
+
+<p style="font-size:28px; font-family:Avenir Next">Comments</p>
+<%= render @article.comments %>
+ 
+<p style="font-size:20px; font-family:Avenir Next">Add a comment:</p>
+<%= render "comments/form" %>
+ 
+<p style="font-size:12px; font-family:Avenir Next; text-align:left;"> 
+<%= link_to 'Edit Article', edit_article_path(@article) %> |
+<%= link_to 'Back to Articles', articles_path %>
+</p>
+</div>

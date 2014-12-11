@@ -1,0 +1,13 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p style="font-size:12px; font-family:Avenir Next">
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p style="font-size:12px; font-family:Avenir Next">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p style="font-size:12px; font-family:Avenir Next">
+    <%= f.submit %>
+  </p>
+<% end %>

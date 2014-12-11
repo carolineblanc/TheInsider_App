@@ -1,0 +1,47 @@
+<div class="container">
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 style="font-size:50px; font-family:Avenir Next; text-align: center;"><em>The City Insider</em></h1>
+        <p style="font-size:30px; font-family:Avenir Next; text-align: center;">Restaurants, bars, shopping, activities... <em>The City Insider</em> keeps you in the loop for the best addresses in the City.</p>
+
+      </div>
+    </div>
+
+<div class="row featurette">
+        <div class="col-md-7">
+          <h2 style="font-size:30px; font-family:Avenir Next; text-align:left;">Articles</h2>
+          <div style="font-size:18px; font-family:Avenir Next; text-align:left;"><%= link_to 'New article', new_article_path %></div><br>
+          <div class="container">
+          <% @articles.each do |article| %>
+          <p class="lead" style="font-size:26px; font-family:Avenir Next; text-align:left;">
+            <%= article.title %>
+          </p>
+          <p style="font-size:14px; font-family:Avenir Next; text-align:left;">
+            <%= article.text %>
+          </p>
+          
+          <img src="<%= article.image %>"/>
+          </div>
+          
+          </div>
+          
+          </div>
+          <div class="container">
+          <p  style="font-size:12px; font-family:Avenir Next; text-align:left;">
+          <% if current_user %>
+            <%= link_to 'Show', article_path(article) %> |
+            <%= link_to 'Edit', edit_article_path(article) %> |
+            <%= link_to 'Destroy', article_path(article),
+                        method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </p>
+                    </div>
+          <% end %>
+          <hr>
+          <% end %>
+          
+        </div>
+      </div>
+
+  

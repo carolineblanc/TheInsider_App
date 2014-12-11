@@ -1,0 +1,15 @@
+<p style="font-size:16px; font-family:Avenir Next">
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+ 
+<p style="font-size:16px; font-family:Avenir Next">
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+ 
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
